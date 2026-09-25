@@ -64,7 +64,9 @@ function PublicationsPage() {
   const filtered = useMemo(() => {
     const q = (search.q ?? "").trim().toLowerCase();
     return publications
-      .filter((p) => (activeCategory ? p.category === activeCategory : true))
+      .filter((p) =>
+        activeCategory ? p.category === activeCategory : p.category !== "Manuscript Archive",
+      )
       .filter((p) => (search.year ? p.year === search.year : true))
       .filter((p) => (search.topic ? p.topics.includes(search.topic) : true))
       .filter((p) =>
