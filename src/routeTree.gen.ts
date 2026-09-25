@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as LeadersNepalRouteImport } from './routes/leaders-nepal'
+import { Route as PublicationsRouteImport } from './routes/publications'
+import { Route as TeachingRouteImport } from './routes/teaching'
+import { Route as WritingMediaRouteImport } from './routes/writing-media'
+import { Route as ResearchIndexRouteImport } from './routes/research.index'
+import { Route as ResearchSlugRouteImport } from './routes/research.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadersNepalRoute = LeadersNepalRouteImport.update({
+  id: '/leaders-nepal',
+  path: '/leaders-nepal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicationsRoute = PublicationsRouteImport.update({
+  id: '/publications',
+  path: '/publications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeachingRoute = TeachingRouteImport.update({
+  id: '/teaching',
+  path: '/teaching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WritingMediaRoute = WritingMediaRouteImport.update({
+  id: '/writing-media',
+  path: '/writing-media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchIndexRoute = ResearchIndexRouteImport.update({
+  id: '/research/',
+  path: '/research/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchSlugRoute = ResearchSlugRouteImport.update({
+  id: '/research/$slug',
+  path: '/research/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/leaders-nepal': typeof LeadersNepalRoute
+  '/publications': typeof PublicationsRoute
+  '/teaching': typeof TeachingRoute
+  '/writing-media': typeof WritingMediaRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/research/': typeof ResearchIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/leaders-nepal': typeof LeadersNepalRoute
+  '/publications': typeof PublicationsRoute
+  '/teaching': typeof TeachingRoute
+  '/writing-media': typeof WritingMediaRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/research': typeof ResearchIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/leaders-nepal': typeof LeadersNepalRoute
+  '/publications': typeof PublicationsRoute
+  '/teaching': typeof TeachingRoute
+  '/writing-media': typeof WritingMediaRoute
+  '/research/$slug': typeof ResearchSlugRoute
+  '/research/': typeof ResearchIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/leaders-nepal'
+    | '/publications'
+    | '/teaching'
+    | '/writing-media'
+    | '/research/$slug'
+    | '/research/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/leaders-nepal'
+    | '/publications'
+    | '/teaching'
+    | '/writing-media'
+    | '/research/$slug'
+    | '/research'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/leaders-nepal'
+    | '/publications'
+    | '/teaching'
+    | '/writing-media'
+    | '/research/$slug'
+    | '/research/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  LeadersNepalRoute: typeof LeadersNepalRoute
+  PublicationsRoute: typeof PublicationsRoute
+  TeachingRoute: typeof TeachingRoute
+  WritingMediaRoute: typeof WritingMediaRoute
+  ResearchSlugRoute: typeof ResearchSlugRoute
+  ResearchIndexRoute: typeof ResearchIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaders-nepal': {
+      id: '/leaders-nepal'
+      path: '/leaders-nepal'
+      fullPath: '/leaders-nepal'
+      preLoaderRoute: typeof LeadersNepalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publications': {
+      id: '/publications'
+      path: '/publications'
+      fullPath: '/publications'
+      preLoaderRoute: typeof PublicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teaching': {
+      id: '/teaching'
+      path: '/teaching'
+      fullPath: '/teaching'
+      preLoaderRoute: typeof TeachingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writing-media': {
+      id: '/writing-media'
+      path: '/writing-media'
+      fullPath: '/writing-media'
+      preLoaderRoute: typeof WritingMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research/': {
+      id: '/research/'
+      path: '/research'
+      fullPath: '/research/'
+      preLoaderRoute: typeof ResearchIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research/$slug': {
+      id: '/research/$slug'
+      path: '/research/$slug'
+      fullPath: '/research/$slug'
+      preLoaderRoute: typeof ResearchSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  LeadersNepalRoute: LeadersNepalRoute,
+  PublicationsRoute: PublicationsRoute,
+  TeachingRoute: TeachingRoute,
+  WritingMediaRoute: WritingMediaRoute,
+  ResearchSlugRoute: ResearchSlugRoute,
+  ResearchIndexRoute: ResearchIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
