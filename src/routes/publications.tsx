@@ -26,21 +26,22 @@ const description =
 const PER_PAGE = 8;
 
 type Search = {
-  category?: string;
-  year?: number;
-  topic?: string;
-  q?: string;
-  page?: number;
+  category?: string | undefined;
+  year?: number | undefined;
+  topic?: string | undefined;
+  q?: string | undefined;
+  page?: number | undefined;
 };
 
 export const Route = createFileRoute("/publications")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    category: typeof search.category === "string" ? search.category : undefined,
-    year: Number.isFinite(Number(search.year)) && search.year ? Number(search.year) : undefined,
-    topic: typeof search.topic === "string" ? search.topic : undefined,
-    q: typeof search.q === "string" && search.q ? search.q : undefined,
-    page: Number(search.page) > 1 ? Number(search.page) : undefined,
+    category: typeof search["category"] === "string" ? search["category"] : undefined,
+    year: Number(search["year"]) > 0 ? Number(search["year"]) : undefined,
+    topic: typeof search["topic"] === "string" ? search["topic"] : undefined,
+    q: typeof search["q"] === "string" && search["q"] ? search["q"] : undefined,
+    page: Number(search["page"]) > 1 ? Number(search["page"]) : undefined,
   }),
+
   head: () => ({
     meta: [
       { title },
