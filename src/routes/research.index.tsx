@@ -12,11 +12,11 @@ const title = "Research — Amod K. Pokhrel";
 const description =
   "Research projects on air pollution, clean cooking and household energy, child health, lead exposure, and environmental monitoring in Nepal.";
 
-type Search = { topic?: string };
+type Search = { topic?: string | undefined };
 
 export const Route = createFileRoute("/research/")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    topic: typeof search.topic === "string" ? search.topic : undefined,
+    topic: typeof search["topic"] === "string" ? search["topic"] : undefined,
   }),
   head: () => ({
     meta: [
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/research/")({
 
 function ResearchPage() {
   const { topic } = Route.useSearch();
-  const navigate = useNavigate({ from: "/research" });
+  const navigate = useNavigate({ from: "/research/" });
 
   const active = researchTopics.includes(topic as ResearchTopic)
     ? (topic as ResearchTopic)
@@ -41,7 +41,7 @@ function ResearchPage() {
     : researchProjects;
 
   const setTopic = (next?: string) => {
-    void navigate({ search: next ? { topic: next } : {} });
+    void navigate({ search: (): Search => (next ? { topic: next } : {}) });
   };
 
   return (

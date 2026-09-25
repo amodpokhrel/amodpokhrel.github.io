@@ -123,7 +123,7 @@ function LeadersPage() {
           )}
 
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-            <ExternalLink href={leaders.links[0].url}>Visit LEADERS Nepal</ExternalLink>
+            <ExternalLink href={leaders.links[0]!.url}>Visit LEADERS Nepal</ExternalLink>
             <a href={`mailto:${leaders.email}`} className="link-underline">
               Organizational inquiries: {leaders.email}
             </a>

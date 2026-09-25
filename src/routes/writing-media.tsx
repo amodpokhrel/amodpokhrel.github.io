@@ -27,7 +27,7 @@ function WritingMediaPage() {
 
       <section className="section-y">
         <div className="container-page">
-          <Tabs defaultValue={mediaCategories[0]}>
+          <Tabs defaultValue="Op-eds">
             <TabsList className="h-auto flex-wrap bg-secondary">
               {mediaCategories.map((c) => (
                 <TabsTrigger key={c} value={c} className="min-h-10 px-4 text-sm">
