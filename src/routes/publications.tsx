@@ -186,6 +186,11 @@ function PublicationsPage() {
             {totalPages > 1 ? ` · page ${current} of ${totalPages}` : ""}
           </p>
 
+          {!activeCategory && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Manuscripts listed in the CV are kept separate under Manuscript Archive.
+            </p>
+          )}
           {activeCategory === "Policy & Reports" && (
             <p className="mt-3 text-sm text-muted-foreground">{policyReportsNote}</p>
           )}
