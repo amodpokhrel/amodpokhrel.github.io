@@ -80,18 +80,16 @@ function PublicationsPage() {
 
   const update = (next: Partial<Search>) => {
     void navigate({
-      search: (prev) => {
-        const merged = { ...prev, ...next, page: undefined } as Search;
-        return Object.fromEntries(
-          Object.entries(merged).filter(([, v]) => v !== undefined && v !== ""),
-        ) as Search;
-      },
+      search: (prev): Search => ({ ...(prev as Search), ...next, page: undefined }),
     });
   };
 
   const goPage = (n: number) => {
-    void navigate({ search: (prev) => ({ ...prev, page: n > 1 ? n : undefined }) });
+    void navigate({
+      search: (prev): Search => ({ ...(prev as Search), page: n > 1 ? n : undefined }),
+    });
   };
+
 
   const reset = () => void navigate({ search: {} });
 
