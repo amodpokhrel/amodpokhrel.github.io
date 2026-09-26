@@ -26,6 +26,9 @@ jobs:
         env:
           GH_PAGES: "1"
           NITRO_PRESET: node-server
+          # Engages the prerender exit watchdog so the build exits after all
+          # pages are written instead of hanging on open timers.
+          LOVABLE_SANDBOX: "1"
       - name: Add 404 page and disable Jekyll
         run: |
           cp dist/client/index.html dist/client/404.html
