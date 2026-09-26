@@ -7,7 +7,7 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // GH_PAGES=1 produces a fully static, prerendered build for GitHub Pages.
-const isPages = process.env.GH_PAGES === "1";
+const isPages = process.env["GH_PAGES"] === "1";
 
 const researchSlugs = [
   "student-induction-stove-distribution",
