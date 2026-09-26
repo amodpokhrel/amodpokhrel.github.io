@@ -9,6 +9,7 @@
 - [x] Manuscript Archive kept out of the default "All" list
 - [x] Per-route head metadata + Person structured data (no phone, verified links only)
 - [x] Verified: typecheck clean, all routes 200 from direct URLs, no console errors, no horizontal overflow at 390px, filters/search/mobile menu working
+- [x] GitHub Pages build exits cleanly after prerendering all static routes
 
 ## Open editorial questions (handoff)
 - M02 Kathmandu lockdown manuscript may correspond to a later published article ("A breath of fresh air? ... during the COVID-19 lockdown"). Not merged — needs confirmation.
