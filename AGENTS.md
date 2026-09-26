@@ -12,3 +12,4 @@
 - Site images live in public/images (not lovable-assets): the GitHub Pages static build can't reach Lovable's asset storage.
 - GitHub Pages deploy (.github/workflows/deploy-pages.yml) prerenders every route listed in vite.config.ts; add new routes and research slugs to that list.
 - During static prerendering, React Query timers are unreferenced in src/router.tsx so the GitHub Pages build exits after writing every route.
+- The build-exit watchdog only engages when LOVABLE_SANDBOX=1 (the Lovable sandbox sets it automatically); .github/workflows/deploy-pages.yml sets it explicitly so the GitHub Pages build exits instead of hanging.
