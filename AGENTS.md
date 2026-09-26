@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Site images live in public/images (not lovable-assets): the GitHub Pages static build can't reach Lovable's asset storage.
+- GitHub Pages deploy (.github/workflows/deploy-pages.yml) prerenders every route listed in vite.config.ts; add new routes and research slugs to that list.
