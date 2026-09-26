@@ -3,7 +3,7 @@ import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 const isPrerendering =
-  typeof process !== "undefined" && process.env.TSS_PRERENDERING === "true";
+  typeof process !== "undefined" && process.env["TSS_PRERENDERING"] === "true";
 
 if (isPrerendering) {
   timeoutManager.setTimeoutProvider({
