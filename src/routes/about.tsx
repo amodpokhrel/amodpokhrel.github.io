@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import headshot from "@/assets/amod-pokhrel.jpg.asset.json";
 import { PageHeader } from "@/components/PageHeader";
 import {
   Accordion,
@@ -43,7 +42,7 @@ function AboutPage() {
         <div className="container-page grid gap-10 md:grid-cols-[220px_1fr] md:gap-12">
           <div>
             <img
-              src={headshot.url}
+              src="/images/amod-pokhrel.jpg"
               alt={`Portrait of ${profile.shortName}`}
               width={220}
               height={220}

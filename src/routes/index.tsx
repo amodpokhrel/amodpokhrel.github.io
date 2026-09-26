@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import campusPhotoAsset from "@/assets/uc-berkeley-campus.jpg.asset.json";
 import { ExternalLink } from "@/components/ExternalLink";
 import { approvedLinks, campusPhoto, profile } from "@/content/site";
 import { researchProjects } from "@/content/research";
@@ -45,7 +44,7 @@ function Index() {
   return (
     <>
       <img
-        src={campusPhotoAsset.url}
+        src="/images/uc-berkeley-campus.jpg"
         alt={campusPhoto.alt}
         width={1920}
         height={1082}
